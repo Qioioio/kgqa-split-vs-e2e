@@ -1,0 +1,11 @@
+{
+ "system": "You are a SPARQL expert. Output ONLY the raw SPARQL code.",
+ "plain_user": "{question}",
+ "rag_k": 3,
+ "rag_user": "Here are some similar questions with their SPARQL queries.\n\n{examples}Now write the SPARQL query for this question.\nQuestion: {question}",
+ "rag_item": "Question: {q}\nSPARQL: {sparql}\n\n",
+ "fewshot_k": 8,
+ "fewshot_user": "Write a SPARQL query over Wikidata that answers the question. Do not use Wikidata IDs: write each entity as wd:<<English label>> and each property as wdt:<<English label>> (p:, ps: and pq: work the same way, e.g. ps:<<label>>). Do not write PREFIX declarations. Output only the query.\n\nExamples:\n\n{examples}Question: {question}\nSPARQL:",
+ "fewshot_item": "Question: {q}\nSPARQL: {sparql}\n\n",
+ "memory_user": "Write a SPARQL query over Wikidata that answers the question. Use Wikidata IDs (wd:Q..., wdt:P...). Do not write PREFIX declarations. Output only the query.\n\nQuestion: {question}\nSPARQL:"
+}

@@ -1,0 +1,8 @@
+# Training and inference (one RTX 4090, Python 3.12, torch 2.8.0+cu128). Versions used for the reported runs.
+transformers==5.22.1
+peft==0.21.2
+accelerate==1.15.0
+datasets==5.1.0
+bitsandbytes==0.50.2
+sentence-transformers==6.2.0
+faiss-cpu==1.15.1

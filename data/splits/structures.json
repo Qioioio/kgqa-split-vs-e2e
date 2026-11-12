@@ -1,0 +1,317 @@
+[
+ {
+  "id": 1,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v1 . ?v1 wdt:r ?v0 }",
+  "train_questions": 2963,
+  "test_pool": 595,
+  "test_1000": 130,
+  "heldout": null
+ },
+ {
+  "id": 2,
+  "family": "plain",
+  "pattern": "select distinct ?v0 where { wd:e wdt:r ?v0 }",
+  "train_questions": 2636,
+  "test_pool": 616,
+  "test_1000": 134,
+  "heldout": null
+ },
+ {
+  "id": 3,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r wd:e . ?v1 pq:r ?v0 }",
+  "train_questions": 1912,
+  "test_pool": 438,
+  "test_1000": 95,
+  "heldout": null
+ },
+ {
+  "id": 4,
+  "family": "plain",
+  "pattern": "select distinct ?v0 where { ?v0 wdt:r wd:e . ?v0 wdt:r wd:e }",
+  "train_questions": 1604,
+  "test_pool": 280,
+  "test_1000": 61,
+  "heldout": "comp"
+ },
+ {
+  "id": 5,
+  "family": "plain",
+  "pattern": "select distinct ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r wd:e }",
+  "train_questions": 1493,
+  "test_pool": 245,
+  "test_1000": 53,
+  "heldout": null
+ },
+ {
+  "id": 6,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r wd:e }",
+  "train_questions": 1443,
+  "test_pool": 225,
+  "test_1000": 49,
+  "heldout": null
+ },
+ {
+  "id": 7,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v0 . ?v1 pq:r ?v2 filter ( contains ( str ( year ( ?v2 ) ) , 'lit' ) ) }",
+  "train_questions": 1292,
+  "test_pool": 287,
+  "test_1000": 63,
+  "heldout": null
+ },
+ {
+  "id": 8,
+  "family": "ASK",
+  "pattern": "ask where { wd:e wdt:r ?v0 filter ( ?v0 = num ) }",
+  "train_questions": 910,
+  "test_pool": 240,
+  "test_1000": 52,
+  "heldout": null
+ },
+ {
+  "id": 9,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v0 . ?v1 pq:r wd:e }",
+  "train_questions": 844,
+  "test_pool": 177,
+  "test_1000": 39,
+  "heldout": null
+ },
+ {
+  "id": 10,
+  "family": "label filter + LIMIT",
+  "pattern": "select distinct ?v0 ?v1 where { ?v0 wdt:r wd:e . ?v0 rdfs:label ?v1 . filter ( strstarts ( lcase ( ?v1 ) , 'lit' ) ) . filter ( lang ( ?v1 ) = 'lit' ) } limit num",
+  "train_questions": 735,
+  "test_pool": 132,
+  "test_1000": 29,
+  "heldout": null
+ },
+ {
+  "id": 11,
+  "family": "label filter + LIMIT",
+  "pattern": "select distinct ?v0 ?v1 where { ?v0 wdt:r wd:e . ?v0 rdfs:label ?v1 . filter ( contains ( lcase ( ?v1 ) , 'lit' ) ) . filter ( lang ( ?v1 ) = 'lit' ) } limit num",
+  "train_questions": 731,
+  "test_pool": 128,
+  "test_1000": 28,
+  "heldout": null
+ },
+ {
+  "id": 12,
+  "family": "COUNT",
+  "pattern": "select ( count ( ?v0 ) as ?v1 ) { ?v0 wdt:r wd:e }",
+  "train_questions": 627,
+  "test_pool": 114,
+  "test_1000": 25,
+  "heldout": "comp"
+ },
+ {
+  "id": 13,
+  "family": "two columns",
+  "pattern": "select ?v0 ?v1 where { wd:e p:r ?v2 . ?v2 ps:r ?v1 . ?v2 pq:r ?v0 }",
+  "train_questions": 617,
+  "test_pool": 84,
+  "test_1000": 18,
+  "heldout": null
+ },
+ {
+  "id": 14,
+  "family": "two columns",
+  "pattern": "select ?v0 ?v1 where { wd:e p:r ?v2 . ?v2 ps:r wd:e . ?v2 pq:r ?v0 . ?v2 pq:r ?v1 }",
+  "train_questions": 612,
+  "test_pool": 121,
+  "test_1000": 26,
+  "heldout": null
+ },
+ {
+  "id": 15,
+  "family": "two columns",
+  "pattern": "select ?v0 ?v1 where { wd:e wdt:r ?v0 . wd:e wdt:r ?v1 }",
+  "train_questions": 599,
+  "test_pool": 122,
+  "test_1000": 27,
+  "heldout": null
+ },
+ {
+  "id": 16,
+  "family": "plain",
+  "pattern": "select distinct ?v0 where { ?v0 wdt:r wd:e }",
+  "train_questions": 584,
+  "test_pool": 128,
+  "test_1000": 28,
+  "heldout": null
+ },
+ {
+  "id": 17,
+  "family": "COUNT",
+  "pattern": "select ( count ( ?v0 ) as ?v1 ) { wd:e wdt:r ?v0 }",
+  "train_questions": 515,
+  "test_pool": 93,
+  "test_1000": 20,
+  "heldout": null
+ },
+ {
+  "id": 18,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r ?v1 filter ( contains ( ?v1 , 'lit' ) ) }",
+  "train_questions": 495,
+  "test_pool": 35,
+  "test_1000": 8,
+  "heldout": null
+ },
+ {
+  "id": 19,
+  "family": "ASK",
+  "pattern": "ask where { wd:e wdt:r wd:e . wd:e wdt:r wd:e }",
+  "train_questions": 411,
+  "test_pool": 89,
+  "test_1000": 19,
+  "heldout": null
+ },
+ {
+  "id": 20,
+  "family": "ASK",
+  "pattern": "ask where { wd:e wdt:r wd:e }",
+  "train_questions": 399,
+  "test_pool": 100,
+  "test_1000": 22,
+  "heldout": null
+ },
+ {
+  "id": 21,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v2 filter ( contains ( ?v2 , 'lit' ) ) . ?v1 pq:r ?v0 }",
+  "train_questions": 363,
+  "test_pool": 4,
+  "test_1000": 1,
+  "heldout": null
+ },
+ {
+  "id": 22,
+  "family": "label filter + LIMIT",
+  "pattern": "select distinct ?v0 ?v1 where { ?v0 wdt:r wd:e . ?v0 wdt:r wd:e . ?v0 rdfs:label ?v1 . filter ( strstarts ( lcase ( ?v1 ) , 'lit' ) ) . filter ( lang ( ?v1 ) = 'lit' ) } limit num",
+  "train_questions": 332,
+  "test_pool": 32,
+  "test_1000": 7,
+  "heldout": null
+ },
+ {
+  "id": 23,
+  "family": "label filter + LIMIT",
+  "pattern": "select distinct ?v0 ?v1 where { ?v0 wdt:r wd:e . ?v0 wdt:r wd:e . ?v0 rdfs:label ?v1 . filter ( contains ( lcase ( ?v1 ) , 'lit' ) ) . filter ( lang ( ?v1 ) = 'lit' ) } limit num",
+  "train_questions": 329,
+  "test_pool": 38,
+  "test_1000": 8,
+  "heldout": null
+ },
+ {
+  "id": 24,
+  "family": "ORDER BY",
+  "pattern": "select ?v0 where { ?v0 wdt:r wd:e . ?v0 wdt:r ?v1 . ?v0 wdt:r wd:e } order by asc ( ?v1 ) limit num",
+  "train_questions": 311,
+  "test_pool": 42,
+  "test_1000": 9,
+  "heldout": "zero"
+ },
+ {
+  "id": 25,
+  "family": "ORDER BY",
+  "pattern": "select ?v0 where { ?v0 wdt:r wd:e . ?v0 wdt:r ?v1 } order by desc ( ?v1 ) limit num",
+  "train_questions": 307,
+  "test_pool": 52,
+  "test_1000": 11,
+  "heldout": "zero"
+ },
+ {
+  "id": 26,
+  "family": "ORDER BY",
+  "pattern": "select ?v0 where { ?v0 wdt:r wd:e . ?v0 wdt:r ?v1 . ?v0 wdt:r wd:e } order by desc ( ?v1 ) limit num",
+  "train_questions": 303,
+  "test_pool": 41,
+  "test_1000": 9,
+  "heldout": "zero"
+ },
+ {
+  "id": 27,
+  "family": "ASK",
+  "pattern": "ask where { wd:e wdt:r ?v0 filter ( ?v0 < num ) }",
+  "train_questions": 216,
+  "test_pool": 49,
+  "test_1000": 11,
+  "heldout": null
+ },
+ {
+  "id": 28,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v0 . ?v1 pq:r ?v2 filter ( contains ( ?v2 , 'lit' ) ) }",
+  "train_questions": 206,
+  "test_pool": 10,
+  "test_1000": 2,
+  "heldout": null
+ },
+ {
+  "id": 29,
+  "family": "ASK",
+  "pattern": "ask where { wd:e wdt:r ?v0 filter ( ?v0 > num ) }",
+  "train_questions": 205,
+  "test_pool": 50,
+  "test_1000": 11,
+  "heldout": null
+ },
+ {
+  "id": 30,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r ?v1 filter ( contains ( str ( year ( ?v1 ) ) , 'lit' ) ) }",
+  "train_questions": 88,
+  "test_pool": 16,
+  "test_1000": 3,
+  "heldout": null
+ },
+ {
+  "id": 31,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v2 filter ( contains ( str ( year ( ?v2 ) ) , 'lit' ) ) . ?v1 pq:r ?v0 }",
+  "train_questions": 38,
+  "test_pool": 10,
+  "test_1000": 2,
+  "heldout": null
+ },
+ {
+  "id": 32,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r wd:quercia }",
+  "train_questions": 1,
+  "test_pool": 0,
+  "test_1000": 0,
+  "heldout": null
+ },
+ {
+  "id": 33,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r wd: }",
+  "train_questions": 1,
+  "test_pool": 0,
+  "test_1000": 0,
+  "heldout": null
+ },
+ {
+  "id": 34,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e wdt:r ?v0 . ?v0 wdt:r wd:qui transtulit sustinet }",
+  "train_questions": 1,
+  "test_pool": 0,
+  "test_1000": 0,
+  "heldout": null
+ },
+ {
+  "id": 35,
+  "family": "plain",
+  "pattern": "select ?v0 where { wd:e p:r ?v1 . ?v1 ps:r ?v0 . ?v1 pq:r ?v2 filter ( contains ( ?v2 , 'lit'ai jamais rien demandé la vie m'lit'ai fait ce que j'lit'ai peint ce que j'lit' ) ) }",
+  "train_questions": 1,
+  "test_pool": 0,
+  "test_1000": 0,
+  "heldout": null
+ }
+]

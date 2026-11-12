@@ -1,0 +1,13 @@
+{
+ "base_model": "Qwen/Qwen2.5-Coder-7B-Instruct",
+ "base_model_revision": "c03e6d358207e414f1eca0bb1891e29f1db0e242",
+ "quantization": {"load_in_4bit": true, "bnb_4bit_quant_type": "nf4", "bnb_4bit_use_double_quant": true, "bnb_4bit_compute_dtype": "bfloat16"},
+ "lora": {"r": 16, "lora_alpha": 32, "lora_dropout": 0.05, "bias": "none",
+          "target_modules": ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]},
+ "training": {"per_device_train_batch_size": 2, "gradient_accumulation_steps": 4, "learning_rate": 2e-4,
+              "lr_scheduler_type": "linear", "warmup_steps": 0, "num_train_epochs": 3, "bf16": true, "optim": "paged_adamw_32bit",
+              "max_seq_length": 512, "logging_steps": 10, "eval_strategy": "epoch", "save_strategy": "epoch", "save_total_limit": 1,
+              "pad_token": "<|endoftext|>"},
+ "generation": {"do_sample": false, "num_beams": 1, "repetition_penalty": 1.0, "max_new_tokens": 256,
+                "eos_tokens": ["<|im_end|>", "<|endoftext|>"], "pad_token": "<|endoftext|>"}
+}

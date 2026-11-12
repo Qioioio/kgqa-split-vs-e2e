@@ -1,0 +1,120 @@
+{
+ "note": "The fine-tuning runs behind the reported systems (scripts/train.py; FYP: scripts/baselines/thesis_train.py). FYP-plain and FYP-RAG share the FYP adapter; E2E-RAG uses the E2E-42 adapter.",
+ "versions": {
+  "python": "3.12.3",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.22.1",
+  "peft": "0.21.2",
+  "accelerate": "1.15.0",
+  "datasets": "5.1.0",
+  "bitsandbytes": "0.50.2"
+ },
+ "runs": {
+  "E2E-42": {
+   "seed": 42,
+   "train_file": "train_e2e.jsonl",
+   "examples": 21989,
+   "steps": 8247,
+   "hours": 2.93,
+   "dev_loss_by_epoch": [
+    0.4791,
+    0.4004,
+    0.3925
+   ],
+   "final_train_loss": 0.2849,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "8ea42a36dc0181d0b99cb8a4744fa75fb30cf3e903b2ebbf691d8c973de4f002"
+  },
+  "E2E-43": {
+   "seed": 43,
+   "train_file": "train_e2e.jsonl",
+   "examples": 21989,
+   "steps": 8247,
+   "hours": 3.03,
+   "dev_loss_by_epoch": [
+    0.4708,
+    0.3928,
+    0.3866
+   ],
+   "final_train_loss": 0.2177,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "731264c166110889db9c2d7dbf1bfb89d37d874686ed03c0d85e3454d6a7d194"
+  },
+  "E2E-B-42": {
+   "seed": 42,
+   "train_file": "train_e2e_B.jsonl",
+   "examples": 19079,
+   "steps": 7155,
+   "hours": 2.59,
+   "dev_loss_by_epoch": [
+    0.4924,
+    0.4274,
+    0.416
+   ],
+   "final_train_loss": 0.2675,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "932d5753bf9c6ce0b850eaa432a535d36d3fd00c4b96dcf940069da5128b19bf"
+  },
+  "SPLIT-42": {
+   "seed": 42,
+   "train_file": "train_split.jsonl",
+   "examples": 21989,
+   "steps": 8247,
+   "hours": 2.9,
+   "dev_loss_by_epoch": [
+    0.0947,
+    0.0869,
+    0.1035
+   ],
+   "final_train_loss": 0.0157,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "04302d0364060bb09fe906bd29380a865e5871366fa2edbbd09c2d5049ff7327"
+  },
+  "SPLIT-43": {
+   "seed": 43,
+   "train_file": "train_split.jsonl",
+   "examples": 21989,
+   "steps": 8247,
+   "hours": 3.02,
+   "dev_loss_by_epoch": [
+    0.0952,
+    0.0902,
+    0.1038
+   ],
+   "final_train_loss": 0.0102,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "4f216024a357129e1471847300be7d7afda2bfe35a03d5c07f2530087228ba5e"
+  },
+  "SPLIT-B-42": {
+   "seed": 42,
+   "train_file": "train_split_B.jsonl",
+   "examples": 19079,
+   "steps": 7155,
+   "hours": 2.53,
+   "dev_loss_by_epoch": [
+    0.0947,
+    0.0854,
+    0.1013
+   ],
+   "final_train_loss": 0.011,
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "198aa15dbb3c71fc3482086b19bc626681fd0f7966d84b388389b8cce4b56879"
+  },
+  "FYP": {
+   "seed": 42,
+   "train_file": "train_e2e.jsonl",
+   "examples": 21989,
+   "steps": 13745,
+   "hours": 5.91,
+   "dev_loss_by_epoch": [
+    0.6844,
+    0.6426,
+    0.6467,
+    0.7062,
+    0.788
+   ],
+   "gpu": "NVIDIA GeForce RTX 4090",
+   "adapter_sha256": "c4f67519b7891b3e1b11dbe2cc5893aca609c184f53d3555351aff903dc7599c"
+  }
+ }
+}

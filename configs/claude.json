@@ -1,0 +1,12 @@
+{
+ "model": "claude-sonnet-5-5",
+ "anthropic_version": "2023-06-01",
+ "max_tokens": 16000,
+ "output_config": {"effort": "high"},
+ "systems": {
+  "Sonnet-FS": {"prompt": "fewshot", "thinking": null},
+  "Sonnet-FS-direct": {"prompt": "fewshot", "thinking": {"type": "between_tools"}},
+  "Sonnet-mem": {"prompt": "memory", "thinking": null},
+  "Sonnet-mem-direct": {"prompt": "memory", "thinking": {"type": "between_tools"}}
+ }
+}

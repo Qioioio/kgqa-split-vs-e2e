@@ -1,0 +1,19 @@
+# downloaded and generated data (scripts/prepare_data.py recreates them)
+data/raw/
+data/clean/
+data/train/
+data/splits/new/
+# outputs of another group's system, fetched by scripts/baselines/grisp_outputs.py
+results/predictions/GRISP*.jsonl
+# working files of runs
+cache/
+runs/
+*.npy
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+# secrets
+.env

@@ -1,0 +1,23 @@
+{
+ "description": "The eight fixed training questions shown in the few-shot prompts (Qwen-FS, Sonnet-FS), in prompt order. Drawn by scripts/baselines/select_fewshot_examples.py: one question from the most frequent structure of each question type, then from the next most frequent structures, never from a held-out structure.",
+ "ids": [
+  "train_21411",
+  "train_8941",
+  "train_15071",
+  "train_11945",
+  "train_11440",
+  "train_1032",
+  "train_21677",
+  "train_15027"
+ ],
+ "structures": [
+  1,
+  2,
+  3,
+  5,
+  8,
+  11,
+  13,
+  17
+ ]
+}

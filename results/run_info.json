@@ -1,0 +1,44 @@
+{
+ "note": "Record of the test run, assembled from the logs of the original run. That run used the scripts this repository's run_queries.py was rewritten from, with the same request settings and outcome rules.",
+ "endpoint": "QLever on a laptop, http://127.0.0.1:7001 (see docs/local_qlever.md)",
+ "server": "qlever-server -i wikidata -j 8 -p 7001 -m 14G -c 3G -e 1G -k 200 -s 30s",
+ "index_at_start": {
+  "id": "#.21663690797.2398122861.66441.3929099113",
+  "name": "Complete Wikidata, built locally from the official RDF dump wikidata-20261105-all-BETA.ttl.bz2 and wikidata-20261106-lexemes-BETA.ttl.bz2 (https://dumps.wikimedia.org/wikidatawiki/entities, not munged)",
+  "triples": 21663690797,
+  "qlever": "v0.6.0",
+  "git": "6c5861a"
+ },
+ "index_at_end": {
+  "id": "#.21663690797.2398122861.66441.3929099113"
+ },
+ "index_unchanged": true,
+ "check_queries": {
+  "description": "200 gold queries executed at the start and again at the end of the run",
+  "same_result": 200,
+  "of": 200
+ },
+ "results": {
+  "distinct_queries": 30692,
+  "status": {
+   "ok": 14876,
+   "query_error": 3097,
+   "empty": 12666,
+   "timeout": 38,
+   "engine_error": 15
+  },
+  "in_this_repository": 26661,
+  "note": "the others belong to side analyses that are not part of this repository"
+ },
+ "without_definite_outcome": [
+  {
+   "dataset": "lcquad2",
+   "id": "test_1712",
+   "system": "Sonnet-mem",
+   "query": "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX wd: <http://www.wikidata.org/entity/>\nPREFIX wdt: <http://www.wikidata.org/prop/direct/>\nSELECT ?painting ?paintingLabel ?creator ?creatorLabel WHERE {\n  ?painting wdt:P31 wd:Q3305213 .\n  ?painting wdt:P180 wd:Q7721 .\n  OPTIONAL { ?painting wdt:P170 ?creator . }\n  \n OPTIONAL { ?creator rdfs:label ?creatorLabel . FILTER (LANG(?creatorLabel) = \"en\") } OPTIONAL { ?painting rdfs:label ?paintingLabel . FILTER (LANG(?paintingLabel) = \"en\") } }",
+   "status": "http_429",
+   "message": "Sort operation was canceled, because time estimate exceeded remaining time by a factor of 3 Last operation: Sort (internal order) on ?painting",
+   "note": "during the run the query got HTTP 429 in the main pass and again in the retry pass; the message was not logged then and is from a replay of the same query after the run"
+  }
+ ]
+}

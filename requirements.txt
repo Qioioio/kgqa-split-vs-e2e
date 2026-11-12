@@ -1,0 +1,10 @@
+# Evaluation, data preparation and linking (CPU). Versions used for the reported results, with Python 3.13.
+numpy==2.5.3
+scipy==1.18.1
+requests==2.34.2
+rdflib==7.6.0
+# linking (property embeddings) and the COPY baseline
+sentence-transformers==6.2.0
+faiss-cpu==1.15.1
+# tests
+pytest

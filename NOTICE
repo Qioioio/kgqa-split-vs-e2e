@@ -1,0 +1,32 @@
+kgqa-split-vs-e2e
+Copyright 2026 Jiaqi Xiong
+
+The code is licensed under the Apache License, Version 2.0 (LICENSE).
+
+Third-party code
+
+  src/kgqa/grasp_metrics.py contains, copied without modification, from GRASP
+  (https://github.com/ad-freiburg/grasp, commit 6aa8931dee9f7c2321832bfbf6fcb65f65d4f8bd),
+  Apache License, Version 2.0, copyright the GRASP authors:
+    - AskResult, Binding, SelectResult               from src/grasp/sparql/types.py
+    - exact_f1_score, assignment_f1_score, f1_score  from src/grasp/sparql/metrics.py
+
+Third-party data
+
+  data/test_questions.jsonl contains questions and SPARQL queries from
+
+  - LC-QuAD 2.0: Dubey, Banerjee, Abdelkawi and Lehmann, "LC-QuAD 2.0: A Large Dataset for Complex
+    Question Answering over Wikidata and DBpedia", ISWC 2019.
+    Licence: Creative Commons Attribution 3.0 Unported, https://creativecommons.org/licenses/by/3.0/
+    (as stated on https://huggingface.co/datasets/lc_quad).
+  - QALD-10: Usbeck et al., Semantic Web journal (https://github.com/KGQA/QALD_10).
+    Licence: MIT, copyright (c) 2022 Longquan Jiang; the licence text is in data/licenses/QALD-10-MIT.txt.
+
+  Both are taken from the versions prepared for the QLever engine by the Chair of Algorithms and Data
+  Structures, University of Freiburg (https://ad-publications.cs.uni-freiburg.de/grisp/benchmark/wikidata/).
+  Changes: the SPARQL queries are those of the Freiburg versions, which rewrote the original queries to
+  run on QLever and on current Wikidata; only test questions are included; 27 LC-QuAD 2.0 questions whose
+  original text was unusable are replaced by their first paraphrase (marked "paraphrase" in the field
+  question_source).
+
+  data/labels/ and results/executions.jsonl.gz contain data from Wikidata (CC0).

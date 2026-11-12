@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kgqa"
+version = "1.0.0"
+description = "Skeleton-then-link versus end-to-end generation for question answering over Wikidata"
+requires-python = ">=3.11"
+license = "Apache-2.0"
+dependencies = ["numpy", "scipy", "requests", "rdflib"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "scripts", "scripts/baselines", "scripts/analysis"]
+testpaths = ["tests"]
+markers = ["slow: recomputes all tables (about a minute)"]
+
+[tool.ruff]
+line-length = 150
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "I"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["kgqa"]
+known-local-folder = ["evaluate"]
